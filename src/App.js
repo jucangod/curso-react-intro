@@ -1,9 +1,10 @@
+
+import React from "react";
 import { TodoCounter } from "./TodoCounter";
 import { TodoSearch } from "./TodoSearch";
 import { TodoList } from "./TodoList";
 import { TodoItem } from "./TodoItem";
 import { CreateTodoButton } from "./CreateTodoButton";
-import React from "react";
 import "./App.css";
 
 const defaultTodos = [
@@ -14,7 +15,7 @@ const defaultTodos = [
 ]
 
 function App() {
-  const [todos, setTodos] = React.useState([defaultTodos]);
+  const [todos, setTodos] = React.useState(defaultTodos);
   const [searchValue, setSearchValue] = React.useState('');
 
   const completedTodos = todos.filter(
@@ -24,8 +25,8 @@ function App() {
 
   const searchedTodos = todos.filter(
     (todo) => {
-      const todoText = todo.tex.toLowerCase()
-      const searchText = searchValue.toLocaleLowerCase();
+      const todoText = todo.text.toLowerCase();
+      const searchText = searchValue.toLowerCase();
       return todoText.includes(searchText);
     }
   );
@@ -49,7 +50,7 @@ function App() {
   };
 
   return (
-    <React.Fragment>
+    <>
       <TodoCounter 
         completed={completedTodos}
         total={totalTodos} 
@@ -69,14 +70,14 @@ function App() {
               completeTodo(todo.text)
             }
             onDelete={() =>
-              deleteTodo
+              deleteTodo(todo.text)
             }
           />
         ))}
       </TodoList>
 
       <CreateTodoButton />
-    </React.Fragment>
+    </>
   );
 }
 
