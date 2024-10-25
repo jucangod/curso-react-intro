@@ -42,7 +42,7 @@ function TodoProvider({children}) {
     
     const deleteTodo = (text) => {
         const newTodos = [...todos];
-        const todoIndex = newTodos.findIndex((todo) => todo.text == text);
+        const todoIndex = newTodos.findIndex((todo) => todo.text === text);
         newTodos.splice(todoIndex, 1);
         saveTodos(newTodos);
     };
@@ -56,11 +56,11 @@ function TodoProvider({children}) {
             searchValue,
             setSearchValue,
             searchedTodos,
+            addTodo,
             completeTodo,
             deleteTodo,
             openModal,
             setOpenModal,
-            addTodo,
         }}>
                 {children}
         </TodoContext.Provider>
