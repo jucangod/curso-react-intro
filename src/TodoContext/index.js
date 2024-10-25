@@ -9,12 +9,12 @@ function TodoProvider({children}) {
         saveItem: saveTodos,
         loading,
         error,
-    } = useLocalStorage("", []);
+    } = useLocalStorage('TODOS_V1', []);
     const [searchValue, setSearchValue] = React.useState('');
     const [openModal, setOpenModal] = React.useState(false);
     
     const completedTodos = todos.filter(
-        (todo) => !!todo.completed
+        todo => !!todo.completed
     ).length;
     const totalTodos = todos.length;
     
@@ -35,14 +35,18 @@ function TodoProvider({children}) {
     
     const completeTodo = (text) => {
         const newTodos = [...todos];
-        const todoIndex = newTodos.findIndex((todo) => todo.text == text);
+        const todoIndex = newTodos.findIndex(
+            (todo) => todo.text == text
+        );
         newTodos[todoIndex].completed = true;
         saveTodos(newTodos);
     };
     
     const deleteTodo = (text) => {
         const newTodos = [...todos];
-        const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+        const todoIndex = newTodos.findIndex(
+          (todo) => todo.text === text
+        );
         newTodos.splice(todoIndex, 1);
         saveTodos(newTodos);
     };
@@ -62,7 +66,7 @@ function TodoProvider({children}) {
             openModal,
             setOpenModal,
         }}>
-                {children}
+            {children}
         </TodoContext.Provider>
         );
     }
