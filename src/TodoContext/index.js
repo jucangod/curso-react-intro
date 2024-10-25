@@ -49,6 +49,7 @@ function TodoProvider({children}) {
             searchedTodos,
             completeTodo,
             deleteTodo,
+            openModal,
             setOpenModal,
         }}>
                 {children}
