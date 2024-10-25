@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/jucangod/curso-react-intro/static/css/main.3cdf8185.css",
+    "main.js": "/jucangod/curso-react-intro/static/js/main.4c00b34d.js",
+    "index.html": "/jucangod/curso-react-intro/index.html",
+    "static/media/delete.svg": "/jucangod/curso-react-intro/static/media/delete.2cfbc54deebd87d7ea9cf648765e70a5.svg",
+    "static/media/check.svg": "/jucangod/curso-react-intro/static/media/check.ec0a68811eaff4a8aabfbaf34839ccbf.svg",
+    "main.3cdf8185.css.map": "/jucangod/curso-react-intro/static/css/main.3cdf8185.css.map",
+    "main.4c00b34d.js.map": "/jucangod/curso-react-intro/static/js/main.4c00b34d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3cdf8185.css",
+    "static/js/main.4c00b34d.js"
+  ]
+}
